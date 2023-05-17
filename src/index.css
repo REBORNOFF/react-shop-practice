@@ -96,3 +96,38 @@ code {
 .progress .indeterminate {
     background-color: #B71C1C;
 }
+
+.cart-list {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50rem;
+    max-width: 95%;
+    box-shadow: inset -1px 3px 8px 5px #1f87ff, 2px 5px 16px 0px #0b344f, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+    animation: showCart 500ms ease-in-out;
+}
+
+.cart-close {
+    cursor: pointer;
+}
+
+.cart-delete {
+    color: #000;
+    cursor: pointer;
+}
+
+.collection .collection-item.active {
+    background-color: #765757;
+}
+
+@keyframes showCart {
+    from {
+        top: 70%;
+        opacity: 0;
+    }
+    to {
+        top: 50%;
+        opacity: 1;
+    }
+}

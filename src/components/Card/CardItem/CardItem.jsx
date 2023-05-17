@@ -8,6 +8,8 @@ const CardItem = props => {
 		addToBasket
 	} = props;
 
+	const { finalPrice } = price;
+
 	return (
 		<div className='card' id={offerId}>
 			<div className='card-image'>
@@ -20,13 +22,13 @@ const CardItem = props => {
 			<div className='card-actions'>
 				<button
 					className='card-button'
-					onClick={() => addToBasket({ offerId, displayName, price })}
+					onClick={() =>
+						addToBasket({ offerId, displayName, finalPrice })
+					}
 				>
 					Buy
 				</button>
-				<span className='right card-price'>
-					{price?.regularPrice} rub.
-				</span>
+				<span className='right card-price'>{finalPrice} ₽</span>
 			</div>
 		</div>
 	);
