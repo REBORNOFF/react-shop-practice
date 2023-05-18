@@ -129,6 +129,12 @@ code {
     cursor: pointer;
 }
 
+.toast-wrapper {
+    top: 3.75rem !important;
+    right: 6.75rem !important;
+    animation: fadeIn 450ms ease-in-out;
+}
+
 @keyframes showCart {
     from {
         top: 70%;
@@ -137,5 +143,16 @@ code {
     to {
         top: 50%;
         opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(2rem);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0rem);
     }
 }

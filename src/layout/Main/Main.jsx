@@ -5,12 +5,14 @@ import { Loader } from '../../components/Loader/Loader';
 import Card from '../../components/Card/Card';
 import Cart from '../../components/Cart/Cart';
 import CartList from '../../components/Cart/CartList/CartList';
+import Alert from '../../components/Alert/Alert';
 
 const Main = () => {
 	const [goods, setGoods] = useState([]);
 	const [loading, setloading] = useState(true);
 	const [order, setOrder] = useState([]);
 	const [showCart, setShowCart] = useState(false);
+	const [alertName, setAlertName] = useState('');
 
 	const addToBasket = item => {
 		const findIndex = order.findIndex(
@@ -38,6 +40,8 @@ const Main = () => {
 
 			setOrder(newOrder);
 		}
+
+		setAlertName(item.displayName);
 	};
 
 	const handleCartShow = () => {
@@ -71,6 +75,10 @@ const Main = () => {
 		setOrder(newOrder);
 	};
 
+	const closeAlert = () => {
+		setAlertName('');
+	};
+
 	useEffect(() => {
 		fetch(API_URL, { headers: { Authorization: API_KEY } })
 			.then(response => response.json())
@@ -100,6 +108,7 @@ const Main = () => {
 					changeQuantityGoods={changeQuantityGoods}
 				/>
 			)}
+			{alertName && <Alert name={alertName} closeAlert={closeAlert} />}
 		</main>
 	);
 };
