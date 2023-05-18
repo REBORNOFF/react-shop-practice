@@ -49,6 +49,28 @@ const Main = () => {
 		setOrder(newOrder);
 	};
 
+	const changeQuantityGoods = (itemId, type) => {
+		const newOrder = order.map(elem => {
+			if (elem.offerId === itemId) {
+				if (type === 'increment') {
+					return {
+						...elem,
+						quantity: elem.quantity + 1
+					};
+				} else if (type === 'decrement') {
+					return {
+						...elem,
+						quantity: elem.quantity > 0 ? elem.quantity - 1 : 0
+					};
+				}
+			} else {
+				return elem;
+			}
+		});
+
+		setOrder(newOrder);
+	};
+
 	useEffect(() => {
 		fetch(API_URL, { headers: { Authorization: API_KEY } })
 			.then(response => response.json())
@@ -75,6 +97,7 @@ const Main = () => {
 					order={order}
 					handleCartShow={handleCartShow}
 					deleteFromCart={deleteFromCart}
+					changeQuantityGoods={changeQuantityGoods}
 				/>
 			)}
 		</main>

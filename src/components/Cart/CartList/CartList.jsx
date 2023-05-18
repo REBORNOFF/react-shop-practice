@@ -1,7 +1,12 @@
 import CartItem from './CartItem/CartItem';
 
 const CartList = props => {
-	const { order = [], handleCartShow, deleteFromCart } = props;
+	const {
+		order = [],
+		handleCartShow,
+		deleteFromCart,
+		changeQuantityGoods
+	} = props;
 	const totalPrice = order.reduce((sum, item) => {
 		return sum + item.finalPrice * item.quantity;
 	}, 0);
@@ -23,6 +28,7 @@ const CartList = props => {
 						key={item.offerId}
 						{...item}
 						deleteFromCart={deleteFromCart}
+						changeQuantityGoods={changeQuantityGoods}
 					/>
 				))
 			) : (

@@ -104,7 +104,7 @@ code {
     transform: translate(-50%, -50%);
     width: 50rem;
     max-width: 95%;
-    box-shadow: inset -1px 3px 8px 5px #1f87ff, 2px 5px 16px 0px #0b344f, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+    box-shadow: inset -1px 3px 8px 5px #1f87ff, 2px 5px 16px 0 #0b344f, 5px 5px 15px 5px rgba(0, 0, 0, 0);
     animation: showCart 500ms ease-in-out;
 }
 
@@ -119,6 +119,14 @@ code {
 
 .collection .collection-item.active {
     background-color: #765757;
+}
+
+.cart-quantity-items {
+    margin: 0 6px;
+    vertical-align: middle;
+    user-select: none;
+    color: #B71C1C;
+    cursor: pointer;
 }
 
 @keyframes showCart {
