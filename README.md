@@ -16,10 +16,12 @@ All names, resources and generally any Fortnite related content belongs to Epic 
 The Materialize framework was chosen as css components. Provides a set of default components with simple customization. 
 A framework from Google was used as css components - [Materialize](https://materializecss.com/).
 
+Link to the project - [React-shop](https://rebornoff.github.io/react-shop-practice/)
+
 ## Application Interface
 
 ![Application Interface](./Interface.png)
 
 ## Cart
 
-![Application Interface](./Interface.png)
+![Application Interface](./Cart.png)
