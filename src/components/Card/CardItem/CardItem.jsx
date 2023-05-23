@@ -1,14 +1,12 @@
+import { useContext } from 'react';
+import { ShopContext } from '../../../context';
+
 const CardItem = props => {
-	const {
-		offerId,
-		displayName,
-		displayDescription,
-		price,
-		displayAssets,
-		addToBasket
-	} = props;
+	const { offerId, displayName, displayDescription, price, displayAssets } =
+		props;
 
 	const { finalPrice } = price;
+	const { addToBasket } = useContext(ShopContext);
 
 	return (
 		<div className='card' id={offerId}>
